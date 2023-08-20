@@ -29,7 +29,7 @@ public struct NeonPlugin: STPlugin {
         }
 
         context.events.onDidLayoutViewport { viewportRange in
-            context.coordinator.viewportRange(viewportRange)
+            context.coordinator.updateViewportRange(viewportRange)
         }
     }
 
@@ -97,7 +97,7 @@ public struct NeonPlugin: STPlugin {
             }
         }
 
-        func viewportRange(_ range: NSTextRange?) {
+        func updateViewportRange(_ range: NSTextRange?) {
             if range != prevViewportRange {
                 highlighter?.visibleContentDidChange()
             }
