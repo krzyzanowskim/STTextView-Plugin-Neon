@@ -27,6 +27,10 @@ public struct NeonPlugin: STPlugin {
             let range = NSRange(affectedRange, in: context.textView.textContentManager)
             context.coordinator.didChangeContent(context.textView.textContentManager, in: range, delta: replacementString.utf16.count - range.length, limit: context.textView.textContentManager.length)
         }
+
+        context.events.onDidChangeViewportRange { viewportRange in
+            context.coordinator.viewportRange(viewportRange)
+        }
     }
 
     public func makeCoordinator(context: CoordinatorContext) -> Coordinator {
@@ -34,9 +38,10 @@ public struct NeonPlugin: STPlugin {
     }
 
     public class Coordinator {
-        private var highlighter: Neon.Highlighter?
+        private(set) var highlighter: Neon.Highlighter?
         private let tsLanguage: SwiftTreeSitter.Language
         private let tsClient: TreeSitterClient
+        private var prevViewportRange: NSTextRange?
 
         init(textView: STTextView) {
             tsLanguage = Language(language: tree_sitter_swift())
@@ -90,6 +95,13 @@ public struct NeonPlugin: STPlugin {
             return tsClient.tokenProvider(with: highlightsQuery) { range, _ in
                 textContentManager.attributedString(in: NSTextRange(range, provider: textContentManager))?.string
             }
+        }
+
+        func viewportRange(_ range: NSTextRange) {
+            if range != prevViewportRange {
+                highlighter?.visibleContentDidChange()
+            }
+            prevViewportRange = range
         }
 
         func willChangeContent(in range: NSRange) {
