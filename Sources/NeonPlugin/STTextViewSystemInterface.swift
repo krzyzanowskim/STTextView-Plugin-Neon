@@ -24,7 +24,7 @@ class STTextViewSystemInterface: TextSystemInterface {
     }
 
     var length: Int {
-        (textView.textContentManager as! NSTextContentStorage).textStorage?.length ?? 0
+        textView.textContentManager.length
     }
 
     var visibleRange: NSRange {

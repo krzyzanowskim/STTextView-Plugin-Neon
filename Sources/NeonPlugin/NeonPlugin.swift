@@ -25,8 +25,7 @@ public struct NeonPlugin: STPlugin {
             guard let replacementString else { return }
 
             let range = NSRange(affectedRange, in: context.textView.textContentManager)
-            let str = context.textView.string
-            context.coordinator.didChangeContent(to: str, in: range, delta: replacementString.utf16.count - range.length, limit: str.utf16.count)
+            context.coordinator.didChangeContent(context.textView.textContentManager, in: range, delta: replacementString.utf16.count - range.length, limit: context.textView.textContentManager.length)
         }
     }
 
@@ -52,12 +51,9 @@ public struct NeonPlugin: STPlugin {
                 return Point(row: position.row, column: position.column)
             }
 
+
             tsClient.invalidationHandler = { [weak self] indexSet in
-                guard let self = self else { return }
-                // Invalidate ctags
-                Task { @MainActor in
-                    self.highlighter?.invalidate(.set(indexSet))
-                }
+                self?.highlighter?.invalidate(.set(indexSet))
             }
 
             highlighter = Neon.Highlighter(textInterface: STTextViewSystemInterface(textView: textView) { neonToken in
@@ -78,6 +74,9 @@ public struct NeonPlugin: STPlugin {
                     return [:]
                 }
             }, tokenProvider: tokenProvider(textContentManager: textView.textContentManager))
+
+            // Does not trigger initial parsing
+            highlighter?.invalidate(.all)
         }
 
         private func tokenProvider(textContentManager: NSTextContentManager) -> Neon.TokenProvider? {
@@ -97,10 +96,15 @@ public struct NeonPlugin: STPlugin {
             tsClient.willChangeContent(in: range)
         }
 
-        func didChangeContent(to string: String, in range: NSRange, delta: Int, limit: Int) {
-            tsClient.didChangeContent(to: string, in: range, delta: delta, limit: limit)
-        }
+        func didChangeContent(_ textContentManager: NSTextContentManager, in range: NSRange, delta: Int, limit: Int) {
+            /// TODO: Instead get the *whole* string over and over (can be expensive for large documents)
+            /// implement maybe a reader function that read what needed only (is it possible?)
+            if let str = textContentManager.attributedString(in: nil)?.string {
+                let readFunction = Parser.readFunction(for: str)
+                tsClient.didChangeContent(in: range, delta: delta, limit: limit, readHandler: readFunction, completionHandler: {})
+            }
 
+        }
     }
 
 }
