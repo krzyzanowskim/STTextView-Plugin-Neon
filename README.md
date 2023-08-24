@@ -2,7 +2,7 @@
 
 ## Installation
 
-Add plugin package as a dependency of your application, then register/add it to the STTextView instance:
+Add the plugin package as a dependency of your application, then register/add it to the STTextView instance:
 
 ```swift
 import NeonPlugin
@@ -14,4 +14,5 @@ textView.addPlugin(
 )
 ```
 
-![O5T57t7Lpab6y9FU](https://github.com/krzyzanowskim/STTextView-Plugin-Neon/assets/758033/73938486-8718-41ae-9d3e-d2132f15940d)
+<img width="612" alt="Screenshot 2023-08-25 at 01 48 23" src="https://github.com/krzyzanowskim/STTextView-Plugin-Neon/assets/758033/704a9256-8cff-4a7a-8277-cf27698e275a">
+
