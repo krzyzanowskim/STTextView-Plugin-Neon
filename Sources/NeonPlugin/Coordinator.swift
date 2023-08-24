@@ -14,7 +14,7 @@ public class Coordinator {
     private let tsClient: TreeSitterClient
     private var prevViewportRange: NSTextRange?
 
-    init(textView: STTextView) {
+    init(textView: STTextView, theme: Theme) {
         tsLanguage = Language(language: tree_sitter_swift())
 
         tsClient = try! TreeSitterClient(language: tsLanguage) { codePointIndex in
@@ -33,22 +33,20 @@ public class Coordinator {
         }
 
         highlighter = Neon.Highlighter(textInterface: STTextViewSystemInterface(textView: textView) { neonToken in
-            switch neonToken.name {
-            case "string":
-                return [.foregroundColor: NSColor.systemRed]
-            case "keyword", "include", "constructor", "keyword.function", "keyword.return", "variable.builtin", "boolean":
-                return [.foregroundColor: NSColor.systemPink]
-            case "type":
-                return [.foregroundColor: NSColor.systemBrown]
-            case "function.call":
-                return [.foregroundColor: NSColor.systemIndigo]
-            case "variable", "method", "parameter":
-                return [.foregroundColor: NSColor.systemTeal]
-            case "comment":
-                return [.foregroundColor: NSColor.systemGray]
-            default:
-                return [:]
+            var attributes: [NSAttributedString.Key: Any] = [.foregroundColor: NSColor.textColor]
+            if let tvFont = textView.font {
+                attributes[.font] = tvFont
             }
+
+            if let themeValue = theme.tokens[neonToken.name] {
+                attributes[.foregroundColor] = themeValue.color.value
+
+                if let font = themeValue.font?.value {
+                    attributes[.font] = font
+                }
+            }
+
+            return attributes
         }, tokenProvider: tokenProvider(textContentManager: textView.textContentManager))
 
         // initial parse of the whole content

@@ -3,8 +3,11 @@ import Cocoa
 import STTextView
 
 public struct NeonPlugin: STPlugin {
+    private let theme: Theme
 
-    public init() { }
+    public init(theme: Theme = .default) {
+        self.theme = theme
+    }
 
     public func setUp(context: Context) {
 
@@ -26,7 +29,7 @@ public struct NeonPlugin: STPlugin {
     }
 
     public func makeCoordinator(context: CoordinatorContext) -> Coordinator {
-        Coordinator(textView: context.textView)
+        Coordinator(textView: context.textView, theme: theme)
     }
 
 }
