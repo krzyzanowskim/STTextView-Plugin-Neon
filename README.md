@@ -8,7 +8,9 @@ Add plugin package as a dependency of your application, then register/add it to 
 import NeonPlugin
 
 textView.addPlugin(
-    NeonPlugin()
+    NeonPlugin(
+        theme: .default
+    )
 )
 ```
 
