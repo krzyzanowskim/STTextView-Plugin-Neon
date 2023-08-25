@@ -14,5 +14,5 @@ textView.addPlugin(
 )
 ```
 
-<img width="612" alt="Screenshot 2023-08-25 at 01 48 23" src="https://github.com/krzyzanowskim/STTextView-Plugin-Neon/assets/758033/704a9256-8cff-4a7a-8277-cf27698e275a">
+<img width="612" alt="Default Theme" src="https://github.com/krzyzanowskim/STTextView-Plugin-Neon/assets/758033/03c35889-da7f-48c1-8982-77430eb69a20">
 
