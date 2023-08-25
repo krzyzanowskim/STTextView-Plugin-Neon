@@ -16,6 +16,9 @@ class STTextViewSystemInterface: TextSystemInterface {
 
     func clearStyle(in range: NSRange) {
         textView.removeAttribute(.foregroundColor, range: range)
+        if let defaultFont = textView.font {
+            textView.addAttributes([.font: defaultFont], range: range)
+        }
     }
 
     func applyStyle(to token: Neon.Token) {

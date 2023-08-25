@@ -32,13 +32,22 @@ public class Coordinator {
             self?.highlighter?.invalidate(.set(indexSet))
         }
 
+        // set textview default font to theme default font
+        textView.font = theme.tokens[.default]?.font?.value ?? textView.font
+
         highlighter = Neon.Highlighter(textInterface: STTextViewSystemInterface(textView: textView) { neonToken in
-            var attributes: [NSAttributedString.Key: Any] = [.foregroundColor: NSColor.textColor]
+            var attributes: [NSAttributedString.Key: Any] = [:]
             if let tvFont = textView.font {
                 attributes[.font] = tvFont
             }
 
-            if let themeValue = theme.tokens[neonToken.name] {
+            if let themeValue = theme.tokens[TokenName(neonToken.name)] {
+                attributes[.foregroundColor] = themeValue.color.value
+
+                if let font = themeValue.font?.value {
+                    attributes[.font] = font
+                }
+            } else if let themeValue = theme.tokens[.default]{
                 attributes[.foregroundColor] = themeValue.color.value
 
                 if let font = themeValue.font?.value {
@@ -46,7 +55,7 @@ public class Coordinator {
                 }
             }
 
-            return attributes
+            return !attributes.isEmpty ? attributes : nil
         }, tokenProvider: tokenProvider(textContentManager: textView.textContentManager))
 
         // initial parse of the whole content

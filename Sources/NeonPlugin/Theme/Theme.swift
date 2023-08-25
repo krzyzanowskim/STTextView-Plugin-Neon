@@ -1,7 +1,6 @@
 import Cocoa
 
 public struct Theme: Decodable {
-    public typealias TokenName = String
 
     public struct Value: Decodable {
         let color: Theme.Color
@@ -15,7 +14,7 @@ public struct Theme: Decodable {
 
     let tokens: [TokenName: Theme.Value]
 
-    public init(_ tokens: [String : Theme.Value]) {
+    public init(_ tokens: [TokenName : Theme.Value]) {
         self.tokens = tokens
     }
 }
@@ -88,9 +87,9 @@ extension Theme {
             "string": Theme.Value(color: Color(NSColor(red: 153 / 255, green: 0, blue: 0, alpha: 1)), font: nil),
             "number": Theme.Value(color: Color(NSColor(red: 28 / 255, green: 0 / 255, blue: 207 / 255, alpha: 1)), font: nil),
 
-            "keyword": Theme.Value(color: Color(NSColor(red: 155 / 255, green: 35 / 255, blue: 147 / 255, alpha: 1)), font: nil),
+            "keyword": Theme.Value(color: Color(NSColor(red: 155 / 255, green: 35 / 255, blue: 147 / 255, alpha: 1)), font: Font(NSFont.monospacedSystemFont(ofSize: 0, weight: .bold))),
             "include": Theme.Value(color: Color(NSColor(red: 155 / 255, green: 35 / 255, blue: 147 / 255, alpha: 1)), font: nil),
-            "constructor": Theme.Value(color: Color(NSColor(red: 155 / 255, green: 35 / 255, blue: 147 / 255, alpha: 1)), font: nil),
+            "constructor": Theme.Value(color: Color(NSColor(red: 155 / 255, green: 35 / 255, blue: 147 / 255, alpha: 1)), font: Font(NSFont.monospacedSystemFont(ofSize: 0, weight: .bold))),
             "keyword.function": Theme.Value(color: Color(NSColor(red: 50 / 255, green: 109 / 255, blue: 116 / 255, alpha: 1)), font: nil),
             "keyword.return": Theme.Value(color: Color(NSColor(red: 155 / 255, green: 35 / 255, blue: 147 / 255, alpha: 1)), font: nil),
             "variable.builtin": Theme.Value(color: Color(NSColor(red: 50 / 255, green: 109 / 255, blue: 116 / 255, alpha: 1)), font: nil),
@@ -105,7 +104,9 @@ extension Theme {
             "method": Theme.Value(color: Color(NSColor(red: 50 / 255, green: 109 / 255, blue: 116 / 255, alpha: 1)), font: nil),
             "parameter": Theme.Value(color: Color(NSColor.textColor), font: nil),
             "comment": Theme.Value(color: Color(NSColor.secondaryLabelColor), font: nil),
-            "operator": Theme.Value(color: Color(NSColor.textColor), font: nil)
+            "operator": Theme.Value(color: Color(NSColor.textColor), font: nil),
+
+            .default: Theme.Value(color: Color(NSColor.textColor), font: Font(NSFont.monospacedSystemFont(ofSize: 0, weight: .regular)))
         ]
     )
 }
