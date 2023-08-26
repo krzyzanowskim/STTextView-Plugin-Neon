@@ -12,7 +12,7 @@ let package = Package(
             targets: ["NeonPlugin"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/krzyzanowskim/STTextView", from: "0.8.9"),
+        .package(url: "https://github.com/krzyzanowskim/STTextView", from: "0.8.10"),
         .package(url: "https://github.com/ChimeHQ/Neon.git", from: "0.5.1"),
         .package(url: "https://github.com/alex-pinkus/tree-sitter-swift.git", branch: "with-generated-files")
     ],
@@ -20,7 +20,7 @@ let package = Package(
         .target(
             name: "NeonPlugin",
             dependencies: [
-                "STTextView",
+                .product(name: "STTextView", package: "STTextView"),
                 "Neon",
                 .product(name: "TreeSitterSwift", package: "tree-sitter-swift")
             ]
