@@ -5,8 +5,9 @@ import Neon
 import TreeSitterClient
 import SwiftTreeSitter
 
-// Swift
-import TreeSitterSwift
+// tree-sitter-xcframework
+import TreeSitter
+import TreeSitterResource
 
 public class Coordinator {
     private(set) var highlighter: Neon.Highlighter?
@@ -15,7 +16,7 @@ public class Coordinator {
     private var prevViewportRange: NSTextRange?
 
     init(textView: STTextView, theme: Theme) {
-        tsLanguage = Language(language: tree_sitter_swift())
+        tsLanguage = Language(language: TreeSitterLanguage.swift.parser)
 
         tsClient = try! TreeSitterClient(language: tsLanguage) { codePointIndex in
             guard let location = textView.textContentManager.location(at: codePointIndex),
@@ -65,9 +66,7 @@ public class Coordinator {
 
     private func tokenProvider(textContentManager: NSTextContentManager) -> Neon.TokenProvider? {
 
-        let url = Bundle.main.resourceURL!.appendingPathComponent("TreeSitterSwift_TreeSitterSwift.bundle").appendingPathComponent("Contents/Resources/queries/highlights.scm")
-
-        guard let highlightsQuery = try? tsLanguage.query(contentsOf: url) else {
+        guard let highlightsQuery = try? tsLanguage.query(contentsOf: TreeSitterLanguage.swift.highlightQueryURL!) else {
             return nil
         }
 
