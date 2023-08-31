@@ -11,8 +11,6 @@ class EditorViewController: NSViewController {
         let scrollView = STTextView.scrollableTextView()
         self.textView = scrollView.documentView as? STTextView
         self.view = scrollView
-
-        textView.delegate = self
     }
 
     override func viewDidLoad() {
@@ -24,7 +22,6 @@ class EditorViewController: NSViewController {
             NeonPlugin(theme: .default)
         )
 
-        
         textView.backgroundColor = .controlBackgroundColor
         textView.font = .monospacedSystemFont(ofSize: 0, weight: .regular)
 
@@ -36,7 +33,4 @@ class EditorViewController: NSViewController {
         }
         """
     }
-}
-
-extension EditorViewController: STTextViewDelegate {
 }
