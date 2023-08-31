@@ -11,6 +11,8 @@ class EditorViewController: NSViewController {
         let scrollView = STTextView.scrollableTextView()
         self.textView = scrollView.documentView as? STTextView
         self.view = scrollView
+
+        textView.delegate = self
     }
 
     override func viewDidLoad() {
@@ -34,4 +36,7 @@ class EditorViewController: NSViewController {
         }
         """
     }
+}
+
+extension EditorViewController: STTextViewDelegate {
 }
