@@ -9,7 +9,7 @@ public struct NeonPlugin: STPlugin {
         self.theme = theme
     }
 
-    public func setUp(context: Context) {
+    public func setUp(context: any Context) {
 
         context.events.onWillChangeText { affectedRange in
             let range = NSRange(affectedRange, in: context.textView.textContentManager)
