@@ -15,15 +15,27 @@ class STTextViewSystemInterface: TextSystemInterface {
     }
 
     func clearStyle(in range: NSRange) {
-        textView.removeAttribute(.foregroundColor, range: range)
+        guard let textRange = NSTextRange(range, in: textView.textContentManager) else {
+            assertionFailure()
+            return
+        }
+
+        textView.textLayoutManager.removeRenderingAttribute(.foregroundColor, for: textRange)
         if let defaultFont = textView.font {
             textView.addAttributes([.font: defaultFont], range: range)
         }
     }
 
     func applyStyle(to token: Neon.Token) {
-        guard let attrs = attributeProvider(token) else { return }
-        textView.addAttributes(attrs, range: token.range)
+        guard let attrs = attributeProvider(token),
+              let textRange = NSTextRange(token.range, in: textView.textContentManager)
+        else {
+            return
+        }
+
+        for attr in attrs {
+            textView.textLayoutManager.addRenderingAttribute(attr.key, value: attr.value, for: textRange)
+        }
     }
 
     var length: Int {
