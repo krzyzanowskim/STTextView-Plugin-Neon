@@ -2,11 +2,17 @@ import Cocoa
 
 import STTextView
 
+// tree-sitter-xcframework
+import TreeSitter
+import TreeSitterResource
+
 public struct NeonPlugin: STPlugin {
     private let theme: Theme
+    private let language: TreeSitterLanguage
 
-    public init(theme: Theme = .default) {
+    public init(theme: Theme = .default, language: TreeSitterLanguage) {
         self.theme = theme
+        self.language = language
     }
 
     public func setUp(context: any Context) {
@@ -29,7 +35,7 @@ public struct NeonPlugin: STPlugin {
     }
 
     public func makeCoordinator(context: CoordinatorContext) -> Coordinator {
-        Coordinator(textView: context.textView, theme: theme)
+        Coordinator(textView: context.textView, theme: theme, language: language)
     }
 
 }

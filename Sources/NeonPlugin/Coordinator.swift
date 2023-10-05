@@ -11,12 +11,14 @@ import TreeSitterResource
 
 public class Coordinator {
     private(set) var highlighter: Neon.Highlighter?
+    private let language: TreeSitterLanguage
     private let tsLanguage: SwiftTreeSitter.Language
     private let tsClient: TreeSitterClient
     private var prevViewportRange: NSTextRange?
 
-    init(textView: STTextView, theme: Theme) {
-        tsLanguage = Language(language: TreeSitterLanguage.swift.parser)
+    init(textView: STTextView, theme: Theme, language: TreeSitterLanguage) {
+        self.language = language
+        tsLanguage = Language(language: language.parser)
 
         tsClient = try! TreeSitterClient(language: tsLanguage) { codePointIndex in
             guard let location = textView.textContentManager.location(at: codePointIndex),
@@ -66,7 +68,7 @@ public class Coordinator {
 
     private func tokenProvider(textContentManager: NSTextContentManager) -> Neon.TokenProvider? {
 
-        guard let highlightsQuery = try? tsLanguage.query(contentsOf: TreeSitterLanguage.swift.highlightQueryURL!) else {
+        guard let highlightsQuery = try? tsLanguage.query(contentsOf: language.highlightQueryURL!) else {
             return nil
         }
 
