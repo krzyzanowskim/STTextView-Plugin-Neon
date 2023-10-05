@@ -19,7 +19,7 @@ class EditorViewController: NSViewController {
 
 
         textView.addPlugin(
-            NeonPlugin(theme: .default)
+            NeonPlugin(theme: .default, language: .swift)
         )
 
         textView.backgroundColor = .controlBackgroundColor
