@@ -19,7 +19,7 @@ struct ContentView: View {
                 text: $text,
                 selection: $selection,
                 options: [.wrapLines, .highlightSelectedLine],
-                plugins: [NeonPlugin(theme: .default)]
+                plugins: [NeonPlugin(theme: .default, language: .go)]
             )
             .textViewFont(.monospacedDigitSystemFont(ofSize: NSFont.systemFontSize, weight: .regular))
 
@@ -41,10 +41,12 @@ struct ContentView: View {
 
     private func loadContent() {
         let string = """
-        import Foundation
+        package main
 
-        func hello() {
-            print("Hello World!")
+        import "fmt"
+
+        func main() {
+            fmt.Println("hello world")
         }
         """
         self.text = AttributedString(string)
