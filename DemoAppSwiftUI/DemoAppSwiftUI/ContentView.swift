@@ -12,28 +12,14 @@ import NeonPlugin
 struct ContentView: View {
     @State private var text: AttributedString = ""
     @State private var selection: NSRange?
-    @State private var counter = 0
     var body: some View {
-        VStack(spacing: 0) {
-            STTextViewUI.TextView(
-                text: $text,
-                selection: $selection,
-                options: [.wrapLines, .highlightSelectedLine],
-                plugins: [NeonPlugin(theme: .default, language: .go)]
-            )
-            .textViewFont(.monospacedDigitSystemFont(ofSize: NSFont.systemFontSize, weight: .regular))
-
-            HStack {
-                if let selection {
-                    Text("Location: \(selection.location)")
-                } else {
-                    Text("No selection")
-                }
-                Spacer()
-            }
-            .padding(.vertical, 4)
-            .padding(.horizontal, 8)
-        }
+        STTextViewUI.TextView(
+            text: $text,
+            selection: $selection,
+            options: [.wrapLines, .highlightSelectedLine],
+            plugins: [NeonPlugin(theme: .default, language: .go)]
+        )
+        .textViewFont(.monospacedDigitSystemFont(ofSize: NSFont.systemFontSize, weight: .regular))
         .onAppear {
             loadContent()
         }
