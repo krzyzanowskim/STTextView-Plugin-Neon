@@ -7,24 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		75C5C2892ACF2BEF00514ADD /* NeonPlugin in Frameworks */ = {isa = PBXBuildFile; productRef = 75C5C2882ACF2BEF00514ADD /* NeonPlugin */; };
+		75CB31052ACF2A60007E814A /* STTextView in Frameworks */ = {isa = PBXBuildFile; productRef = 75CB31042ACF2A60007E814A /* STTextView */; };
 		8A4DB2822ACEDB4600757685 /* DemoAppSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4DB2812ACEDB4600757685 /* DemoAppSwiftUIApp.swift */; };
 		8A4DB2842ACEDB4600757685 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4DB2832ACEDB4600757685 /* ContentView.swift */; };
 		8A4DB2862ACEDB4700757685 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A4DB2852ACEDB4700757685 /* Assets.xcassets */; };
 		8A4DB2892ACEDB4700757685 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A4DB2882ACEDB4700757685 /* Preview Assets.xcassets */; };
-		8A4DB2922ACEDB7400757685 /* STTextKitPlus in Frameworks */ = {isa = PBXBuildFile; productRef = 8A4DB2912ACEDB7400757685 /* STTextKitPlus */; };
-		8A4DB2942ACEDB7400757685 /* STTextView in Frameworks */ = {isa = PBXBuildFile; productRef = 8A4DB2932ACEDB7400757685 /* STTextView */; };
-		8A4DB2972ACEDBAF00757685 /* NeonPlugin in Frameworks */ = {isa = PBXBuildFile; productRef = 8A4DB2962ACEDBAF00757685 /* NeonPlugin */; };
-		8A4DB2992ACEDC9200757685 /* STTextView-Plugin-Neon in Resources */ = {isa = PBXBuildFile; fileRef = 8A4DB2982ACEDC9200757685 /* STTextView-Plugin-Neon */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		75C5C2872ACF2BC900514ADD /* STTextView-Plugin-Neon */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "STTextView-Plugin-Neon"; path = ..; sourceTree = "<group>"; };
 		8A4DB27E2ACEDB4600757685 /* DemoAppSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoAppSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A4DB2812ACEDB4600757685 /* DemoAppSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoAppSwiftUIApp.swift; sourceTree = "<group>"; };
 		8A4DB2832ACEDB4600757685 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		8A4DB2852ACEDB4700757685 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8A4DB2882ACEDB4700757685 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8A4DB28A2ACEDB4700757685 /* DemoAppSwiftUI.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DemoAppSwiftUI.entitlements; sourceTree = "<group>"; };
-		8A4DB2982ACEDC9200757685 /* STTextView-Plugin-Neon */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "STTextView-Plugin-Neon"; path = ..; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,21 +30,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8A4DB2972ACEDBAF00757685 /* NeonPlugin in Frameworks */,
-				8A4DB2922ACEDB7400757685 /* STTextKitPlus in Frameworks */,
-				8A4DB2942ACEDB7400757685 /* STTextView in Frameworks */,
+				75CB31052ACF2A60007E814A /* STTextView in Frameworks */,
+				75C5C2892ACF2BEF00514ADD /* NeonPlugin in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		75CB31002ACF2A46007E814A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8A4DB2752ACEDB4600757685 = {
 			isa = PBXGroup;
 			children = (
-				8A4DB2982ACEDC9200757685 /* STTextView-Plugin-Neon */,
+				75C5C2872ACF2BC900514ADD /* STTextView-Plugin-Neon */,
 				8A4DB2802ACEDB4600757685 /* DemoAppSwiftUI */,
 				8A4DB27F2ACEDB4600757685 /* Products */,
+				75CB31002ACF2A46007E814A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -95,9 +100,8 @@
 			);
 			name = DemoAppSwiftUI;
 			packageProductDependencies = (
-				8A4DB2912ACEDB7400757685 /* STTextKitPlus */,
-				8A4DB2932ACEDB7400757685 /* STTextView */,
-				8A4DB2962ACEDBAF00757685 /* NeonPlugin */,
+				75CB31042ACF2A60007E814A /* STTextView */,
+				75C5C2882ACF2BEF00514ADD /* NeonPlugin */,
 			);
 			productName = DemoAppSwiftUI;
 			productReference = 8A4DB27E2ACEDB4600757685 /* DemoAppSwiftUI.app */;
@@ -128,7 +132,7 @@
 			);
 			mainGroup = 8A4DB2752ACEDB4600757685;
 			packageReferences = (
-				8A4DB2902ACEDB7400757685 /* XCRemoteSwiftPackageReference "STTextView" */,
+				75CB31032ACF2A60007E814A /* XCRemoteSwiftPackageReference "STTextView" */,
 			);
 			productRefGroup = 8A4DB27F2ACEDB4600757685 /* Products */;
 			projectDirPath = "";
@@ -145,7 +149,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A4DB2892ACEDB4700757685 /* Preview Assets.xcassets in Resources */,
-				8A4DB2992ACEDC9200757685 /* STTextView-Plugin-Neon in Resources */,
 				8A4DB2862ACEDB4700757685 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -218,7 +221,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -275,7 +278,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -357,30 +360,25 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		8A4DB2902ACEDB7400757685 /* XCRemoteSwiftPackageReference "STTextView" */ = {
+		75CB31032ACF2A60007E814A /* XCRemoteSwiftPackageReference "STTextView" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "git@github.com:krzyzanowskim/STTextView.git";
+			repositoryURL = "https://github.com/krzyzanowskim/STTextView";
 			requirement = {
-				branch = main;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.8.16;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		8A4DB2912ACEDB7400757685 /* STTextKitPlus */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 8A4DB2902ACEDB7400757685 /* XCRemoteSwiftPackageReference "STTextView" */;
-			productName = STTextKitPlus;
-		};
-		8A4DB2932ACEDB7400757685 /* STTextView */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 8A4DB2902ACEDB7400757685 /* XCRemoteSwiftPackageReference "STTextView" */;
-			productName = STTextView;
-		};
-		8A4DB2962ACEDBAF00757685 /* NeonPlugin */ = {
+		75C5C2882ACF2BEF00514ADD /* NeonPlugin */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = NeonPlugin;
+		};
+		75CB31042ACF2A60007E814A /* STTextView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 75CB31032ACF2A60007E814A /* XCRemoteSwiftPackageReference "STTextView" */;
+			productName = STTextView;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
