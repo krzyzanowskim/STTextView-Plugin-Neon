@@ -73,7 +73,8 @@ public class Coordinator {
         }
 
         return tsClient.tokenProvider(with: highlightsQuery) { range, _ in
-            textContentManager.attributedString(in: NSTextRange(range, provider: textContentManager))?.string
+            guard range.isEmpty == false else { return nil }
+            return textContentManager.attributedString(in: NSTextRange(range, provider: textContentManager))?.string
         }
     }
 
