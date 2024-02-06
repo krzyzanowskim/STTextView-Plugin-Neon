@@ -9,6 +9,7 @@ import SwiftTreeSitter
 import TreeSitter
 import TreeSitterResource
 
+@MainActor
 public class Coordinator {
     private(set) var highlighter: Neon.Highlighter?
     private let language: TreeSitterLanguage
