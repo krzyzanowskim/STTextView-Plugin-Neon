@@ -22,7 +22,6 @@ class EditorViewController: NSViewController {
             NeonPlugin(theme: .default, language: .swift)
         )
 
-        textView.backgroundColor = .controlBackgroundColor
         textView.font = .monospacedSystemFont(ofSize: 0, weight: .regular)
 
         textView.string = """
