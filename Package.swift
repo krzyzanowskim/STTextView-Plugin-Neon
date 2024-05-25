@@ -23,7 +23,9 @@ let package = Package(
                 .product(name: "STTextView", package: "STTextView"),
                 "Neon",
                 .product(name: "TreeSitter", package: "tree-sitter-xcframework")
-            ]
+            ],
+            path: "Sources/NeonPlugin",
+            resources: [.process("Themes.xcassets")]
         )
     ]
 )
