@@ -28,7 +28,7 @@ class EditorViewController: NSViewController {
         import Foundation
 
         func hello() {
-            print("Hello World!")
+        \tprint("Hello World!")
         }
         """
     }
