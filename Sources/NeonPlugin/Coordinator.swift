@@ -6,7 +6,7 @@ import TreeSitterClient
 import SwiftTreeSitter
 
 // tree-sitter-xcframework
-import TreeSitter
+//import TreeSitter
 import TreeSitterResource
 
 @MainActor

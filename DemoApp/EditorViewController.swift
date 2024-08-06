@@ -17,7 +17,7 @@ class EditorViewController: NSViewController {
         super.viewDidLoad()
         view.frame.size = CGSize(width: 500, height: 500)
 
-
+        textView.backgroundColor = .controlBackgroundColor
         textView.addPlugin(
             NeonPlugin(theme: .default, language: .swift)
         )

@@ -3,7 +3,7 @@ import Cocoa
 import STTextView
 
 // tree-sitter-xcframework
-import TreeSitter
+//import TreeSitter
 import TreeSitterResource
 
 public struct NeonPlugin: STPlugin {
