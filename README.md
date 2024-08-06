@@ -10,7 +10,7 @@ import NeonPlugin
 textView.addPlugin(
     NeonPlugin(
         theme: .default,
-        language: .go
+        language: .swift
     )
 )
 ```
@@ -29,7 +29,7 @@ struct ContentView: View {
             text: $text,
             selection: $selection,
             options: [.wrapLines, .highlightSelectedLine],
-            plugins: [NeonPlugin(theme: .default, language: .go)]
+            plugins: [NeonPlugin(theme: .default, language: .swift)]
         )
         .textViewFont(.monospacedDigitSystemFont(ofSize: NSFont.systemFontSize, weight: .regular))
         .onAppear {

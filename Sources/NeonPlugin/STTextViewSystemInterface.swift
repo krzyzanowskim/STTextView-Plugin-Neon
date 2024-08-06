@@ -20,7 +20,7 @@ class STTextViewSystemInterface: TextSystemInterface {
             return
         }
 
-        textView.textLayoutManager.removeRenderingAttribute(.foregroundColor, for: textRange)
+        textView.removeAttribute(.foregroundColor, range: textRange)
         if let defaultFont = textView.font {
             textView.addAttributes([.font: defaultFont], range: range)
         }
@@ -34,7 +34,7 @@ class STTextViewSystemInterface: TextSystemInterface {
         }
 
         for attr in attrs {
-            textView.textLayoutManager.addRenderingAttribute(attr.key, value: attr.value, for: textRange)
+            textView.addAttributes([attr.key: attr.value], range: textRange)
         }
     }
 

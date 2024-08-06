@@ -13,15 +13,15 @@ public struct Theme {
     }
     
     public var defaultFont: NSFont? {
-        return tokensCustomFontDict["default"]
+        tokensCustomFontDict["default"]
     }
     
     public var defaultColor: NSColor? {
-        return color(forToken: "default")
+        color(forToken: "default")
     }
     
     public func color(forToken tokenName: TokenName) -> NSColor? {
-        return colors.color(forToken: tokenName)
+        colors.color(forToken: tokenName)
     }
     
     public func font(forToken tokenName: TokenName) -> NSFont? {

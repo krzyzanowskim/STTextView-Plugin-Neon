@@ -64,7 +64,12 @@ public class Coordinator {
 
         // initial parse of the whole content
         tsClient.willChangeContent(in: NSRange(textView.textContentManager.documentRange, in: textView.textContentManager))
-        tsClient.didChangeContent(in: NSRange(textView.textContentManager.documentRange, in: textView.textContentManager), delta: textView.textContentManager.length, limit: textView.textContentManager.length, readHandler: Parser.readFunction(for: textView.textContentManager.attributedString(in: nil)?.string ?? ""), completionHandler: {})
+        tsClient.didChangeContent(in: NSRange(textView.textContentManager.documentRange, in: textView.textContentManager),
+                                  delta: textView.textContentManager.length,
+                                  limit: textView.textContentManager.length,
+                                  readHandler: Parser.readFunction(for: textView.textContentManager.attributedString(in: nil)?.string ?? ""),
+                                  completionHandler: {
+        })
     }
 
     private func tokenProvider(textContentManager: NSTextContentManager) -> Neon.TokenProvider? {

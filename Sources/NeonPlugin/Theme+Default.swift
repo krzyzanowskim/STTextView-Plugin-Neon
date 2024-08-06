@@ -8,8 +8,8 @@ extension Theme {
         tokensCustomFontDict: [
             "default": NSFont.monospacedSystemFont(ofSize: 0, weight: .regular),
             "keyword": NSFont.monospacedSystemFont(ofSize: 0, weight: .bold),
-            "constructor": NSFont.monospacedSystemFont(ofSize: 0, weight: .bold)
-            
+            "constructor": NSFont.monospacedSystemFont(ofSize: 0, weight: .bold),
+            "text.title": NSFont.monospacedSystemFont(ofSize: 0, weight: .bold)
         ]
     )
 }
