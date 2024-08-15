@@ -4,11 +4,11 @@
 import PackageDescription
 
 let package = Package(
-    name: "NeonPlugin",
+    name: "STTextView-Plugin-Neon",
     platforms: [.macOS(.v12)],
     products: [
         .library(
-            name: "NeonPlugin",
+            name: "STTextView-Plugin-Neon",
             targets: ["NeonPlugin"]),
     ],
     dependencies: [
@@ -22,8 +22,8 @@ let package = Package(
             name: "NeonPlugin",
             dependencies: [
                 .product(name: "STTextView", package: "STTextView"),
-                "Neon",
-                "TreeSitterResource",
+                .product(name: "Neon", package: "Neon"),
+                .target(name: "TreeSitterResource")
             ],
             resources: [.process("Themes.xcassets")]
         ),
