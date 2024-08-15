@@ -12,7 +12,7 @@ let package = Package(
             targets: ["NeonPlugin"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/krzyzanowskim/STTextView", from: "0.9.6"),
+        .package(url: "https://github.com/krzyzanowskim/STTextView", from: "1.0.0"),
         .package(url: "https://github.com/ChimeHQ/Neon.git", from: "0.6.0"),
         .package(url: "https://github.com/ChimeHQ/SwiftTreeSitter", from: "0.8.0"),
         .package(path: "TreeSitterLanguages")
