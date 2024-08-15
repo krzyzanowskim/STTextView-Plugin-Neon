@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		7565EBBE2A9BE09D0005B170 /* EditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7565EBBD2A9BE09D0005B170 /* EditorViewController.swift */; };
-		7565EBC12A9BE0B10005B170 /* STTextView in Frameworks */ = {isa = PBXBuildFile; productRef = 7565EBC02A9BE0B10005B170 /* STTextView */; };
 		758BAB532A9BDFC200D840BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758BAB522A9BDFC200D840BF /* AppDelegate.swift */; };
 		758BAB552A9BDFC300D840BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 758BAB542A9BDFC300D840BF /* Assets.xcassets */; };
 		758BAB582A9BDFC300D840BF /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 758BAB562A9BDFC300D840BF /* MainMenu.xib */; };
-		75E2FDF22A9BE2260055DF08 /* NeonPlugin in Frameworks */ = {isa = PBXBuildFile; productRef = 75E2FDF12A9BE2260055DF08 /* NeonPlugin */; };
+		75BCCB942C6E0E8E00B132FB /* STTextView-Plugin-Neon in Frameworks */ = {isa = PBXBuildFile; productRef = 75BCCB932C6E0E8E00B132FB /* STTextView-Plugin-Neon */; };
+		75BCCB962C6E0E9100B132FB /* STTextView in Frameworks */ = {isa = PBXBuildFile; productRef = 75BCCB952C6E0E9100B132FB /* STTextView */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,7 +22,7 @@
 		758BAB542A9BDFC300D840BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		758BAB572A9BDFC300D840BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		758BAB592A9BDFC300D840BF /* DemoApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DemoApp.entitlements; sourceTree = "<group>"; };
-		75E2FDEF2A9BE2050055DF08 /* STTextView-Plugin-Neon */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "STTextView-Plugin-Neon"; path = ..; sourceTree = "<group>"; };
+		75BCCB922C6E0E0700B132FB /* STTextView-Plugin-Neon */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "STTextView-Plugin-Neon"; path = ..; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -30,8 +30,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7565EBC12A9BE0B10005B170 /* STTextView in Frameworks */,
-				75E2FDF22A9BE2260055DF08 /* NeonPlugin in Frameworks */,
+				75BCCB942C6E0E8E00B132FB /* STTextView-Plugin-Neon in Frameworks */,
+				75BCCB962C6E0E9100B132FB /* STTextView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -41,7 +41,7 @@
 		758BAB462A9BDFC200D840BF = {
 			isa = PBXGroup;
 			children = (
-				75E2FDEF2A9BE2050055DF08 /* STTextView-Plugin-Neon */,
+				75BCCB922C6E0E0700B132FB /* STTextView-Plugin-Neon */,
 				7565EBBD2A9BE09D0005B170 /* EditorViewController.swift */,
 				758BAB522A9BDFC200D840BF /* AppDelegate.swift */,
 				758BAB542A9BDFC300D840BF /* Assets.xcassets */,
@@ -84,8 +84,8 @@
 			);
 			name = DemoApp;
 			packageProductDependencies = (
-				7565EBC02A9BE0B10005B170 /* STTextView */,
-				75E2FDF12A9BE2260055DF08 /* NeonPlugin */,
+				75BCCB932C6E0E8E00B132FB /* STTextView-Plugin-Neon */,
+				75BCCB952C6E0E9100B132FB /* STTextView */,
 			);
 			productName = DemoApp;
 			productReference = 758BAB4F2A9BDFC200D840BF /* DemoApp.app */;
@@ -361,20 +361,20 @@
 			repositoryURL = "https://github.com/krzyzanowskim/STTextView";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 0.8.10;
+				minimumVersion = 1.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		7565EBC02A9BE0B10005B170 /* STTextView */ = {
+		75BCCB932C6E0E8E00B132FB /* STTextView-Plugin-Neon */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = "STTextView-Plugin-Neon";
+		};
+		75BCCB952C6E0E9100B132FB /* STTextView */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 7565EBBF2A9BE0B10005B170 /* XCRemoteSwiftPackageReference "STTextView" */;
 			productName = STTextView;
-		};
-		75E2FDF12A9BE2260055DF08 /* NeonPlugin */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = NeonPlugin;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
