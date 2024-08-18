@@ -1,1 +1,0 @@
-Modified fork of https://github.com/simonbs/TreeSitterLanguages
