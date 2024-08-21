@@ -41,9 +41,7 @@ public class Coordinator {
 
         highlighter = Neon.Highlighter(textInterface: STTextViewSystemInterface(textView: textView) { neonToken in
             var attributes: [NSAttributedString.Key: Any] = [:]
-            if let tvFont = textView.font {
-                attributes[.font] = tvFont
-            }
+            attributes[.font] = textView.font
 
             if let themeColor = theme.color(forToken: TokenName(neonToken.name)) {
                 attributes[.foregroundColor] = themeColor

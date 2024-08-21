@@ -360,8 +360,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/krzyzanowskim/STTextView";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
+				kind = revision;
+				revision = dbca58d7dcdaa2d69a29a0064ea0dace235044d9;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

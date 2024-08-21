@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="21701" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="21701"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="22690"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -12,7 +13,7 @@
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Demo" customModuleProvider="target">
+        <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="DemoApp" customModuleProvider="target">
             <connections>
                 <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
             </connections>
@@ -680,16 +681,63 @@
             </items>
             <point key="canvasLocation" x="200" y="121"/>
         </menu>
-        <window title="Demo" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
-            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+        <window title="Notepad.exe" subtitle="Source Code (Swift)" separatorStyle="line" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" tabbingMode="disallowed" toolbarStyle="unified" id="QvC-M9-y7g">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" fullSizeContentView="YES"/>
+            <windowCollectionBehavior key="collectionBehavior" fullScreenNone="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="390" width="480" height="360"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="875"/>
+            <rect key="contentRect" x="335" y="390" width="623" height="360"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1710" height="1068"/>
             <view key="contentView" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
-                <autoresizingMask key="autoresizingMask"/>
+                <rect key="frame" x="0.0" y="0.0" width="623" height="360"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             </view>
-            <point key="canvasLocation" x="200" y="400"/>
+            <toolbar key="toolbar" implicitIdentifier="86B657B1-CE16-43CE-BB95-355C2D72CE06" autosavesConfiguration="NO" allowsUserCustomization="NO" displayMode="iconAndLabel" sizeMode="regular" id="AFK-D8-To6">
+                <allowedToolbarItems>
+                    <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="UKJ-KS-99J"/>
+                    <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="Sw0-V3-4kP"/>
+                    <toolbarItem implicitItemIdentifier="EE84FA05-D975-4D60-92AD-96708FB8D32C" label="Gutter" paletteLabel="Line Numbers" tag="-1" image="list.number" catalog="system" bordered="YES" id="lbD-mi-9KU">
+                        <size key="minSize" width="28" height="25"/>
+                        <size key="maxSize" width="28" height="25"/>
+                        <connections>
+                            <action selector="toggleGutter:" target="-1" id="E1t-d2-iFM"/>
+                        </connections>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="4819707F-042F-4369-B1AD-FA522E55B2C7" label="Highlight" paletteLabel="Line Highlight" tag="-1" image="highlighter" catalog="system" bordered="YES" id="ha3-wF-gtv">
+                        <size key="minSize" width="28" height="25"/>
+                        <size key="maxSize" width="28" height="25"/>
+                        <connections>
+                            <action selector="toggleLineHighlight:" target="-1" id="xCG-ND-Z2S"/>
+                        </connections>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="31848FE5-B3AF-4DC2-AA4E-5E3CE93B7D6C" label="Wrap" paletteLabel="Wrap Text" tag="-1" image="text.justify.left" catalog="system" bordered="YES" id="fUw-9z-Oi7">
+                        <size key="minSize" width="28" height="25"/>
+                        <size key="maxSize" width="28" height="25"/>
+                        <connections>
+                            <action selector="toggleTextWrap:" target="-1" id="YTI-1Z-cY4"/>
+                        </connections>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="D8B5D636-F868-40B1-B9E8-583FA00D6ADA" label="Invisibles" paletteLabel="Invisible Characters" tag="-1" image="dot.viewfinder" catalog="system" bordered="YES" id="4Ne-Q2-OVk">
+                        <size key="minSize" width="28" height="25"/>
+                        <size key="maxSize" width="28" height="25"/>
+                        <connections>
+                            <action selector="toggleInvisibleCharacters:" target="-1" id="mjM-Fx-13W"/>
+                        </connections>
+                    </toolbarItem>
+                </allowedToolbarItems>
+                <defaultToolbarItems>
+                    <toolbarItem reference="lbD-mi-9KU"/>
+                    <toolbarItem reference="ha3-wF-gtv"/>
+                    <toolbarItem reference="4Ne-Q2-OVk"/>
+                    <toolbarItem reference="fUw-9z-Oi7"/>
+                </defaultToolbarItems>
+            </toolbar>
+            <point key="canvasLocation" x="85.5" y="420"/>
         </window>
     </objects>
+    <resources>
+        <image name="dot.viewfinder" catalog="system" width="16" height="15"/>
+        <image name="highlighter" catalog="system" width="17" height="16"/>
+        <image name="list.number" catalog="system" width="16" height="13"/>
+        <image name="text.justify.left" catalog="system" width="16" height="13"/>
+    </resources>
 </document>
