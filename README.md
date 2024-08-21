@@ -1,5 +1,7 @@
 [STTextView](https://github.com/krzyzanowskim/STTextView) Source Code Syntax Highlighting with [TreeSitter](https://tree-sitter.github.io/tree-sitter/) and [Neon](https://github.com/ChimeHQ/Neon).
 
+https://github.com/user-attachments/assets/910b9862-c682-4dcc-ae0e-dbb55e8a3fe5
+
 ## Installation
 
 Add the plugin package as a dependency of your application, then register/add it to the STTextView instance:
@@ -43,6 +45,4 @@ struct ContentView: View {
     }
 }
 ```
-
-<img width="612" alt="Default Theme" src="https://github.com/krzyzanowskim/STTextView-Plugin-Neon/assets/758033/03c35889-da7f-48c1-8982-77430eb69a20">
 
