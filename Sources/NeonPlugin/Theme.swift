@@ -3,8 +3,8 @@ import Cocoa
 public struct Theme {
     
     // MARK: - Props
-    let colors: Colors
-    let fonts: Fonts
+    public let colors: Colors
+    public let fonts: Fonts
 
     // MARK: - Lifecycle
     public init(colors: Colors, fonts: Fonts) {
@@ -22,7 +22,11 @@ public struct Theme {
 
     public struct Colors {
         
-        let colors: [TokenName: NSColor]
+        public let colors: [TokenName: NSColor]
+
+        public init(colors: [String: NSColor]) {
+            self.colors = Dictionary(uniqueKeysWithValues: colors.map { key, value in (TokenName(key), value) })
+        }
 
         public init(bundle: Bundle, name: String) {
             colors = [
@@ -56,7 +60,11 @@ public struct Theme {
 
     public struct Fonts {
 
-        let fonts: [TokenName: NSFont]
+        public let fonts: [TokenName: NSFont]
+
+        public init(fonts: [String: NSFont]) {
+            self.fonts = Dictionary(uniqueKeysWithValues: fonts.map { key, value in (TokenName(key), value) })
+        }
 
         public init(bundle: Bundle, name: String) {
             fonts = [
