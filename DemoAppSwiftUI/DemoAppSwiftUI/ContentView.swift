@@ -6,14 +6,14 @@
 //
 
 import SwiftUI
-import STTextViewUI
-import NeonPlugin
+import STTextViewSwiftUI
+import STPluginNeon
 
 struct ContentView: View {
     @State private var text: AttributedString = ""
     @State private var selection: NSRange?
     var body: some View {
-        STTextViewUI.TextView(
+        TextView(
             text: $text,
             selection: $selection,
             options: [.wrapLines, .highlightSelectedLine],

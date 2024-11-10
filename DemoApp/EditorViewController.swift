@@ -1,7 +1,7 @@
 import AppKit
 import STTextView
 
-import NeonPlugin
+import STPluginNeon
 
 class EditorViewController: NSViewController {
 
@@ -20,13 +20,8 @@ class EditorViewController: NSViewController {
 
         let sourceCodeTheme = Theme(
             ///Themes.xcassets
-            colors: Theme.Colors(bundle: Bundle(path: Bundle.main.resourcePath! + "/STTextView-Plugin-Neon_NeonPlugin.bundle")!, name: "neon.plugin.default"),
-            tokensCustomFontDict: [
-                "default": NSFont.monospacedSystemFont(ofSize: 14, weight: .regular),
-                "keyword": NSFont.monospacedSystemFont(ofSize: 14, weight: .medium),
-                "constructor": NSFont.monospacedSystemFont(ofSize: 14, weight: .medium),
-                "text.title": NSFont.monospacedSystemFont(ofSize: 14, weight: .medium)
-            ]
+            colors: Theme.Colors(bundle: Bundle(path: Bundle.main.resourcePath! + "/STTextView-Plugin-Neon_STPluginNeon.bundle")!, name: "neon.plugin.default"),
+            fonts: Theme.Fonts(bundle: Bundle(path: Bundle.main.resourcePath! + "/STTextView-Plugin-Neon_STPluginNeon.bundle")!, name: "neon.plugin.default")
         )
 
         textView.addPlugin(
