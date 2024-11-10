@@ -9,7 +9,7 @@ let package = Package(
     products: [
         .library(
             name: "STTextView-Plugin-Neon",
-            targets: ["NeonPlugin"]),
+            targets: ["STPluginNeon"]),
     ],
     dependencies: [
         .package(url: "https://github.com/krzyzanowskim/STTextView", branch: "main"),
@@ -18,7 +18,7 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "NeonPlugin",
+            name: "STPluginNeon",
             dependencies: [
                 .product(name: "STTextView", package: "STTextView"),
                 .product(name: "Neon", package: "Neon"),
