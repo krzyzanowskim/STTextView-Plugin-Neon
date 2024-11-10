@@ -7,7 +7,7 @@ https://github.com/user-attachments/assets/910b9862-c682-4dcc-ae0e-dbb55e8a3fe5
 Add the plugin package as a dependency of your application, then register/add it to the STTextView instance:
 
 ```swift
-import NeonPlugin
+import STPluginNeon
 
 textView.addPlugin(
     NeonPlugin(
@@ -21,7 +21,7 @@ SwiftUI:
 ```swift
 import SwiftUI
 import STTextViewUI
-import NeonPlugin
+import STPluginNeon
 
 struct ContentView: View {
     @State private var text: AttributedString = ""
