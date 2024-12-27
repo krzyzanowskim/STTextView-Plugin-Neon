@@ -1,6 +1,6 @@
 import Foundation
 
-import tree_sitter
+import TreeSitter
 
 import TreeSitterBash
 import TreeSitterBashQueries
@@ -65,7 +65,7 @@ public enum TreeSitterLanguage: CaseIterable, Hashable {
     case typescript
     case yaml
 
-    public var parser: UnsafePointer<TSLanguage> {
+    public var parser: OpaquePointer {
         switch self {
         case .bash:
             tree_sitter_bash()
