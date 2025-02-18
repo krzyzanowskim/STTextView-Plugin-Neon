@@ -9,6 +9,7 @@ import SwiftUI
 import STTextViewSwiftUI
 import STPluginNeon
 
+@MainActor
 struct ContentView: View {
     @State private var text: AttributedString = ""
     @State private var selection: NSRange?
