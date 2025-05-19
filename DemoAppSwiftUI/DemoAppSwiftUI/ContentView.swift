@@ -6,7 +6,18 @@
 //
 
 import SwiftUI
+
+#if canImport(AppKit) && !targetEnvironment(macCatalyst)
 import STTextViewSwiftUI
+typealias Font = NSFont
+typealias Color = NSColor
+#endif
+#if canImport(UIKit)
+import STTextViewSwiftUIUIKit
+typealias Font = UIFont
+typealias Color = UIColor
+#endif
+
 import STPluginNeon
 
 @MainActor
@@ -20,7 +31,7 @@ struct ContentView: View {
             options: [.wrapLines, .highlightSelectedLine],
             plugins: [NeonPlugin(theme: .default, language: .go)]
         )
-        .textViewFont(.monospacedDigitSystemFont(ofSize: NSFont.systemFontSize, weight: .regular))
+        .textViewFont(.monospacedDigitSystemFont(ofSize: Font.systemFontSize, weight: .regular))
         .onAppear {
             loadContent()
         }
