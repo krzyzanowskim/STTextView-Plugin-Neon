@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E47756F2DDCD4650018A56C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E47756E2DDCD4650018A56C /* LaunchScreen.storyboard */; };
 		3E5E70CC2DDBA62900C3D71A /* Neon in Frameworks */ = {isa = PBXBuildFile; productRef = 3E5E70CB2DDBA62900C3D71A /* Neon */; };
 		3E5E70CE2DDBA62F00C3D71A /* STTextView-Plugin-Neon in Frameworks */ = {isa = PBXBuildFile; productRef = 3E5E70CD2DDBA62F00C3D71A /* STTextView-Plugin-Neon */; };
 		8A4DB2822ACEDB4600757685 /* DemoAppSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4DB2812ACEDB4600757685 /* DemoAppSwiftUIApp.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3E47756E2DDCD4650018A56C /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		75C5C2872ACF2BC900514ADD /* STTextView-Plugin-Neon */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "STTextView-Plugin-Neon"; path = ..; sourceTree = "<group>"; };
 		8A4DB27E2ACEDB4600757685 /* DemoAppSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoAppSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A4DB2812ACEDB4600757685 /* DemoAppSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoAppSwiftUIApp.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 		8A4DB2802ACEDB4600757685 /* DemoAppSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				3E47756E2DDCD4650018A56C /* LaunchScreen.storyboard */,
 				8A4DB2812ACEDB4600757685 /* DemoAppSwiftUIApp.swift */,
 				8A4DB2832ACEDB4600757685 /* ContentView.swift */,
 				8A4DB2852ACEDB4700757685 /* Assets.xcassets */,
@@ -148,6 +151,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E47756F2DDCD4650018A56C /* LaunchScreen.storyboard in Resources */,
 				8A4DB2892ACEDB4700757685 /* Preview Assets.xcassets in Resources */,
 				8A4DB2862ACEDB4700757685 /* Assets.xcassets in Resources */,
 			);
@@ -299,6 +303,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -308,10 +313,10 @@
 				PRODUCT_BUNDLE_IDENTIFIER = best.swift.DemoAppSwiftUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
-				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,6";
 			};
 			name = Debug;
 		};
@@ -328,6 +333,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -337,10 +343,10 @@
 				PRODUCT_BUNDLE_IDENTIFIER = best.swift.DemoAppSwiftUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
-				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,6";
 			};
 			name = Release;
 		};
