@@ -5,7 +5,7 @@ import PackageDescription
 
 let package = Package(
     name: "STTextView-Plugin-Neon",
-    platforms: [.macOS(.v12)],
+    platforms: [.macOS(.v12), .iOS(.v16), .macCatalyst(.v16)],
     products: [
         .library(
             name: "STTextView-Plugin-Neon",
@@ -20,11 +20,26 @@ let package = Package(
         .target(
             name: "STPluginNeon",
             dependencies: [
+                .target(name: "STPluginNeonAppKit", condition: .when(platforms: [.macOS])),
+                .target(name: "STPluginNeonUIKit", condition: .when(platforms: [.iOS, .macCatalyst]))
+            ],
+            resources: [.process("Themes.xcassets")]
+        ),
+        .target(
+            name: "STPluginNeonAppKit",
+            dependencies: [
                 .product(name: "STTextView", package: "STTextView"),
                 .product(name: "Neon", package: "Neon"),
                 .target(name: "TreeSitterResource")
             ],
-            resources: [.process("Themes.xcassets")]
+        ),
+        .target(
+            name: "STPluginNeonUIKit",
+            dependencies: [
+                .product(name: "STTextView", package: "STTextView"),
+                .product(name: "Neon", package: "Neon"),
+                .target(name: "TreeSitterResource")
+            ],
         ),
         .target(
             name: "TreeSitterResource",
