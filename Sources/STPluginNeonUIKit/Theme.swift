@@ -30,26 +30,26 @@ public struct Theme {
 
         public init(bundle: Bundle, name: String) {
             colors = [
-                "plain": UIColor(named: "\(name)/plain")!,
-                "boolean": UIColor(named: "\(name)/boolean")!,
-                "comment": UIColor(named: "\(name)/comment")!,
-                "constructor": UIColor(named: "\(name)/constructor")!,
-                "function.call": UIColor(named: "\(name)/function.call")!,
-                "include": UIColor(named: "\(name)/include")!,
-                "keyword": UIColor(named: "\(name)/keyword")!,
-                "keyword.function": UIColor(named: "\(name)/keyword.function")!,
-                "keyword.return": UIColor(named: "\(name)/keyword.return")!,
-                "method": UIColor(named: "\(name)/method")!,
-                "number": UIColor(named: "\(name)/number")!,
-                "operator": UIColor(named: "\(name)/operator")!,
-                "parameter": UIColor(named: "\(name)/parameter")!,
-                "punctuation.special": UIColor(named: "\(name)/punctuation.special")!,
-                "string": UIColor(named: "\(name)/string")!,
-                "text.literal": UIColor(named: "\(name)/text.literal")!,
-                "text.title": UIColor(named: "\(name)/text.title")!,
-                "type": UIColor(named: "\(name)/type")!,
-                "variable.builtin": UIColor(named: "\(name)/variable.builtin")!,
-                "variable": UIColor(named: "\(name)/variable")!
+                "plain": UIColor(named: "\(name)/plain", in: bundle, compatibleWith: nil)!,
+                "boolean": UIColor(named: "\(name)/boolean", in: bundle, compatibleWith: nil)!,
+                "comment": UIColor(named: "\(name)/comment", in: bundle, compatibleWith: nil)!,
+                "constructor": UIColor(named: "\(name)/constructor", in: bundle, compatibleWith: nil)!,
+                "function.call": UIColor(named: "\(name)/function.call", in: bundle, compatibleWith: nil)!,
+                "include": UIColor(named: "\(name)/include", in: bundle, compatibleWith: nil)!,
+                "keyword": UIColor(named: "\(name)/keyword", in: bundle, compatibleWith: nil)!,
+                "keyword.function": UIColor(named: "\(name)/keyword.function", in: bundle, compatibleWith: nil)!,
+                "keyword.return": UIColor(named: "\(name)/keyword.return", in: bundle, compatibleWith: nil)!,
+                "method": UIColor(named: "\(name)/method", in: bundle, compatibleWith: nil)!,
+                "number": UIColor(named: "\(name)/number", in: bundle, compatibleWith: nil)!,
+                "operator": UIColor(named: "\(name)/operator", in: bundle, compatibleWith: nil)!,
+                "parameter": UIColor(named: "\(name)/parameter", in: bundle, compatibleWith: nil)!,
+                "punctuation.special": UIColor(named: "\(name)/punctuation.special", in: bundle, compatibleWith: nil)!,
+                "string": UIColor(named: "\(name)/string", in: bundle, compatibleWith: nil)!,
+                "text.literal": UIColor(named: "\(name)/text.literal", in: bundle, compatibleWith: nil)!,
+                "text.title": UIColor(named: "\(name)/text.title", in: bundle, compatibleWith: nil)!,
+                "type": UIColor(named: "\(name)/type", in: bundle, compatibleWith: nil)!,
+                "variable.builtin": UIColor(named: "\(name)/variable.builtin", in: bundle, compatibleWith: nil)!,
+                "variable": UIColor(named: "\(name)/variable", in: bundle, compatibleWith: nil)!
             ]
         }
         

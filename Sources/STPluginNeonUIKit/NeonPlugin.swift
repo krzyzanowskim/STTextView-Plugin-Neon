@@ -17,7 +17,7 @@ public struct NeonPlugin: STPlugin {
 
     public func setUp(context: any Context) {
 
-        context.events.onWillChangeText { affectedRange in
+        context.events.onWillChangeText { affectedRange, replacementString in
             let range = NSRange(affectedRange, in: context.textView.textContentManager)
             context.coordinator.willChangeContent(in: range)
         }
