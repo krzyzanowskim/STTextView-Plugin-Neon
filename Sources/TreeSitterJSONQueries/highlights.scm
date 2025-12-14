@@ -14,3 +14,12 @@
 (escape_sequence) @escape
 
 (comment) @comment
+
+[
+  "{"
+  "}"
+  "["
+  "]"
+  ":"
+  ","
+] @punctuation.delimiter
