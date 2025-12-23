@@ -22,8 +22,7 @@ let package = Package(
             dependencies: [
                 .target(name: "STPluginNeonAppKit", condition: .when(platforms: [.macOS])),
                 .target(name: "STPluginNeonUIKit", condition: .when(platforms: [.iOS, .macCatalyst]))
-            ],
-            resources: [.process("Themes.xcassets")]
+            ]
         ),
         .target(
             name: "STPluginNeonAppKit",
@@ -32,6 +31,7 @@ let package = Package(
                 .product(name: "Neon", package: "Neon"),
                 .target(name: "TreeSitterResource")
             ],
+            resources: [.process("Themes.xcassets")]
         ),
         .target(
             name: "STPluginNeonUIKit",
@@ -40,6 +40,7 @@ let package = Package(
                 .product(name: "Neon", package: "Neon"),
                 .target(name: "TreeSitterResource")
             ],
+            resources: [.process("Themes.xcassets")]
         ),
         .target(
             name: "TreeSitterResource",
