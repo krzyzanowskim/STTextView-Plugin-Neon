@@ -15,6 +15,8 @@ class STTextViewSystemInterface: TextSystemInterface {
     }
 
     func clearStyle(in range: NSRange) {
+        // TextKit 2 throws when a rendering attribute is set on an empty range beside an existing run.
+        guard range.length > 0 else { return }
         guard let textRange = NSTextRange(range, in: textView.textContentManager) else {
             assertionFailure()
             return
@@ -25,7 +27,9 @@ class STTextViewSystemInterface: TextSystemInterface {
     }
 
     func applyStyle(to token: Neon.Token) {
-        guard let attrs = attributeProvider(token),
+        // Tree-sitter emits zero-width tokens (missing nodes), which TextKit 2 can't style.
+        guard token.range.length > 0,
+              let attrs = attributeProvider(token),
               let textRange = NSTextRange(token.range, in: textView.textContentManager)
         else {
             return
